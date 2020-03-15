@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import time
+import urllib.request
 
 import numpy as np
 from PIL import Image
@@ -13,12 +14,10 @@ from keras import backend as K
 from keras.applications import inception_v3
 from keras.preprocessing import image
 from tqdm import tqdm
-from pkg_resources import resource_string
 
 from there_is_no_spoon.utils import get_options
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import tensorflow as tf
 
 
 def image_formatter(input_path):
@@ -43,8 +42,9 @@ def image_descaler(image_to_descale):
 
 
 def there_is_no_spoon(input_path, output_path, target_score, target_class, max_change, learning_rate):
-    imagenet_path = resource_string('there_is_no_spoon', 'imagenet_class_index.json').decode('utf-8')
-    imagenet_class_index = json.loads(imagenet_path)
+    url = "https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json"
+    response = urllib.request.urlopen(url)
+    imagenet_class_index = json.loads(response.read())
 
     model = inception_v3.InceptionV3()
     model_input_layer = model.layers[0].input

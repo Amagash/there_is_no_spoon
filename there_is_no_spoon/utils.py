@@ -11,7 +11,7 @@ def get_options(args):
     parser.add_argument("-c", "--target_class", default=910,
                         help="The class number corresponding to the new object you would like to change your image to"
                              "(default is 910 for wooden spoon). The list of classes is available here"
-                             ": https://gist.github.com/ageitgey/4e1342c10a71981d0b491e1b8227328b")
+                             ": https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json")
     parser.add_argument("-m", "--max_change", type=float, default=0.1,
                         help="The maximum change each pixel can support (default is 0.1)"
                              "Larger number produces an image faster but risks more distortion")

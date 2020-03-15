@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.1.0-py3
+FROM python:3.7
 
 COPY requirements.txt .
 RUN pip install --upgrade pip

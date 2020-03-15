@@ -45,3 +45,4 @@ jobs:
           name: amagash/there_is_no_spoon
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          tag: latest

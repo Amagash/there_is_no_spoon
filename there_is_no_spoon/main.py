@@ -13,6 +13,7 @@ from keras import backend as K
 from keras.applications import inception_v3
 from keras.preprocessing import image
 from tqdm import tqdm
+from pkg_resources import resource_string
 
 from there_is_no_spoon.utils import get_options
 
@@ -42,8 +43,8 @@ def image_descaler(image_to_descale):
 
 
 def there_is_no_spoon(input_path, output_path, target_score, target_class, max_change, learning_rate):
-    with open('imagenet_class_index.json') as f:
-        imagenet_class_index = json.load(f)
+    imagenet_path = resource_string('there_is_no_spoon', 'imagenet_class_index.json').decode('utf-8')
+    imagenet_class_index = json.load(imagenet_path)
 
     model = inception_v3.InceptionV3()
     model_input_layer = model.layers[0].input

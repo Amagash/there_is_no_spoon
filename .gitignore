@@ -1,2 +1,5 @@
 venv
 .idea
+build
+dist
+there_is_no_spoon.egg-info

@@ -38,11 +38,13 @@ at least 98% confidence for the new classification.
 `--target_class=TARGET_CLASS`\
 The class index corresponding to the new object you would like to change your image to. For instance
 you have a picture of a cat and you want to generate and adversarial image of the cat image 
-that will be classified as being a spoon. By default, the target_class=910 corresponding of the 
-classification of a wooden spoon.
+that will be classified as being a spoon. 
 You need to find the corresponding index for the
 spoon classification, which you can find here: 
 https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json
+
+By default, the target_class=910, corresponding to the 
+classification of a wooden spoon.
 
 `--max_change=MAX_CHANGE`\
 The maximum change each pixel can support. By default, max_change=0.1.

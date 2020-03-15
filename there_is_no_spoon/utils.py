@@ -4,7 +4,7 @@ import argparse
 def get_options(args):
     parser = argparse.ArgumentParser(description="Parses command.")
     parser.add_argument("-i", "--input", help="Your input file.", required=True)
-    parser.add_argument("-o", "--output", help="Your destination output file.", required=True)
+    parser.add_argument("-o", "--output", help="Your destination output file.", default='/data/adversarial_image.png')
     parser.add_argument("-s", "--target_score", type=float, default=0.98,
                         help="The minimum score (should be between 0 and 1) you would like to reach for the new "
                              "classification (default is 0.98)")

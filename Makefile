@@ -7,6 +7,7 @@ build: clean
 	python setup.py sdist
 
 install: build
+	pip install -r requirements.txt
 	python setup.py install
 
 deploy-pip: install

@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag there_is_no_spoon:$(date +%s)
+        run: docker build . --file Dockerfile --tag there_is_no_spoon:latest
       - name: Dockerize
         if: success()
         uses: manusa/actions-publish-docker@master

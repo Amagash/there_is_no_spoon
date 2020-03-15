@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='there_is_no_spoon',
     author='Tiffany Souterre',
-    version='1.0.6',
+    version='1.0.7',
     packages=['there_is_no_spoon'],
     package_data={'there_is_no_spoon': ['imagenet_class_index.json']},
     include_package_data=True,

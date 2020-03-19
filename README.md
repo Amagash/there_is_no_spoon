@@ -10,6 +10,7 @@ here https://docs.docker.com/install/
 - put the image you want to change in your current directory
 - run the following command and change MY_IMAGE.PNG with the name of your image
 ```
+ sudo docker pull amagash/there_is_no_spoon:latest
  sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE.PNG
 ```
 - the output image will be saved in your current directory under the name "adversarial_image.png"

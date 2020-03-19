@@ -40,10 +40,36 @@ def image_descaler(image_to_descale):
     return image_to_descale
 
 
-def there_is_no_spoon(input_path, output_path, target_score, target_class, max_change, learning_rate):
+def there_is_no_spoon(input_path, output_path, target_score, target_class, max_change, learning_rate, mode):
+    if mode == "predict":
+        name, confidence = predict(input_path)
+        print("Your image is classified as a {} with {:.8}% confidence!".format(name, confidence * 100))
+    elif mode == "generate":
+        generate(input_path, output_path, target_score, target_class, max_change, learning_rate)
+        name, confidence = predict(output_path)
+        print("Your advsersarial image is now classified as a {} with {:.8}% confidence!".format(name, confidence * 100))
+
+
+def get_imagenet_class():
     url = "https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json"
     response = urllib.request.urlopen(url)
     imagenet_class_index = json.loads(response.read())
+    return imagenet_class_index
+
+
+def predict(input_path):
+    model = inception_v3.InceptionV3()
+
+    formatted_image = image_formatter(input_path)
+    predictions = model.predict(formatted_image)
+
+    predicted_classes = inception_v3.decode_predictions(predictions)
+    imagenet_id, name, confidence = predicted_classes[0][0]
+    return name, confidence
+
+
+def generate(input_path, output_path, target_score, target_class, max_change, learning_rate):
+    imagenet_class_index = get_imagenet_class()
 
     model = inception_v3.InceptionV3()
     model_input_layer = model.layers[0].input
@@ -103,6 +129,7 @@ def there_is_no_spoon(input_path, output_path, target_score, target_class, max_c
     descaled_image = image_descaler(adversarial_image[0])
 
     img = Image.fromarray(descaled_image.astype(np.uint8))
+
     img.save(output_path)
 
 
@@ -110,7 +137,7 @@ def main():
     options = get_options(sys.argv[1:])
     there_is_no_spoon(input_path=options.input, output_path=options.output, target_score=options.target_score,
                       target_class=options.target_class, max_change=options.max_change,
-                      learning_rate=options.learning_rate)
+                      learning_rate=options.learning_rate, mode=options.mode)
 
 
 if __name__ == '__main__':

@@ -32,34 +32,34 @@ This sets your file input path. By default it's the current directory.
 This sets your file destination output. By default it is the current directory.
 
 `--mode=MODE`\
-You can run the code in 2 modes: "predict" or generate.
-- The "predict" mode only takes an image as an input and prints the classification of this image.
+You can run the code in 2 modes: "predict" or "generate".
+- The "predict" mode simply takes an image as an input and prints the classification of this image.
 - The "generate" mode let's you generate an adversarial image from an input image of your choice.
-By default, the mode="generate"
+By default, mode="generate".
 
 `--target_class=TARGET_CLASS`\
-The class index corresponding to the new object you would like to change your image to. For instance
-you have a picture of a cat and you want to generate and adversarial image of the cat image 
-that will be classified as being a spoon. 
-You need to find the corresponding index for the
-spoon classification, which you can find here: 
+The class index corresponding to the new object you would like to change your image to. For instance,
+if you have a picture of a cat and you want to generate and adversarial image from the cat image 
+that will be classified as being a spoon, you need to find the corresponding index for the
+spoon classification. You can find the different class and their index here: 
 https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json
 
 By default, the target_class=910, corresponding to the 
-classification of a wooden spoon.
+classification of a wooden spoon (because there is no spoon ;) ).
 
 `--target_score=TARGET_SCORE`\
-The target score is the minimum score (should be between 0 and 1) you would like to reach for 
-the new classification. For instance you have a picture of a cat and you
-want to generate and adversarial image of the cat image that will be classified as being a spoon
-with a confidence of at least your target_score. By default, the target_score = 0.98 to reach
+The target score is the minimum score  you would like to reach for 
+the new classification (which should be between 0 and 1). For instance, if you have a picture of a cat and you
+want to generate and adversarial image from the cat image that will be classified as being a spoon
+with a confidence of at least 95%, you need to set your target_score to 0.95. By default, target_score = 0.98 to reach
 at least 98% confidence for the new classification.
 
 `--learning_rate=LEARNING_RATE`\
-The learning rate corresponds to how much to update the adversarial image in each iteration. 
-By default learning_rate=0.5.
+The learning rate corresponds to how much to update the adversarial image in each iteration.
+Lower value will make your model more precise but might also slow the generation of the adversarial image. 
+By default, learning_rate=0.5.
 
 `--max_change=MAX_CHANGE`\
 The maximum change each pixel can support. By default, max_change=0.1.
-Larger number produces an image faster but risks more distortion.
+Larger number produces an image faster but risks more distortions.
 

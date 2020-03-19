@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='there_is_no_spoon',
     author='Tiffany Souterre',
-    version='1.0.10',
+    version='1.0.11',
     packages=['there_is_no_spoon'],
     description="An application to generate adversarial examples",
     entry_points={

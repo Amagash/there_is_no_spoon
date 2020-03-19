@@ -45,7 +45,7 @@ spoon classification. You can find the different class and their index here:
 https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json
 
 By default, the target_class=910, corresponding to the 
-classification of a wooden spoon (because there is no spoon 😉 ).
+classification of a wooden spoon (because there is no spoon 😉).
 
 `--target_score=TARGET_SCORE`\
 The target score is the minimum score  you would like to reach for 

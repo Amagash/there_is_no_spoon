@@ -20,8 +20,8 @@ Several arguments can be passed to the docker to customize your adversarial imag
 ### Synopsis
 
      sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE.PNG
-     [--output=OUTPUT_PATH][--target_score=TARGET_SCORE][--target_class=TARGET_CLASS]
-     [--max_change=MAX_CHANGE][--learning_rate=LEARNING_RATE]
+     [--output=OUTPUT_PATH][--mode=MODE][--target_class=TARGET_CLASS][--target_score=TARGET_SCORE]
+     [--learning_rate=LEARNING_RATE][--max_change=MAX_CHANGE]
 
 ### Flags
 `--input=INPUT_PATH`\
@@ -34,6 +34,7 @@ This sets your file destination output. By default it is the current directory.
 You can run the code in 2 modes: "predict" or generate.
 - The "predict" mode only takes an image as an input and prints the classification of this image.
 - The "generate" mode let's you generate an adversarial image from an input image of your choice.
+By default, the mode="generate"
 
 `--target_class=TARGET_CLASS`\
 The class index corresponding to the new object you would like to change your image to. For instance

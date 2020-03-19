@@ -34,11 +34,10 @@ def image_formatter(input_path):
 
 
 def image_descaler(image_to_descale):
-    img_descaled = image_to_descale[0]
-    img_descaled /= 2.
-    img_descaled += 0.5
-    img_descaled *= 255.
-    return img_descaled
+    image_to_descale /= 2.
+    image_to_descale += 0.5
+    image_to_descale *= 255.
+    return image_to_descale
 
 
 def there_is_no_spoon(input_path, output_path, target_score, target_class, max_change, learning_rate):

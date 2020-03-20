@@ -33,10 +33,11 @@ there_is_no_spoon --input MY_IMAGE.PNG
 Several arguments can be passed to the docker to customize your adversarial image generation.
 
 ### Synopsis
-
+```
      sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE.PNG
      [--output=OUTPUT_PATH][--mode=MODE][--target_class=TARGET_CLASS][--target_score=TARGET_SCORE]
      [--learning_rate=LEARNING_RATE][--max_change=MAX_CHANGE]
+```
 
 ### Flags
 `--input=INPUT_PATH`\

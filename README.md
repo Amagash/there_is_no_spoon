@@ -19,7 +19,7 @@ here https://docs.docker.com/install/
 -  *pre-requisite*: I would recommend you to create a virtual environment first:
 ```buildoutcfg
 virtualenv -p python3.7 spoon_env
-source spoon/bin/activate
+source spoon_env/bin/activate
 pip install there_is_no_spoon
 ```
 - put the image you want to change in your current directory.
@@ -33,10 +33,10 @@ there_is_no_spoon --input MY_IMAGE.PNG
 Several arguments can be passed to the docker to customize your adversarial image generation.
 
 ### Synopsis
-```
-     sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE.PNG
-     [--output=OUTPUT_PATH][--mode=MODE][--target_class=TARGET_CLASS][--target_score=TARGET_SCORE]
-     [--learning_rate=LEARNING_RATE][--max_change=MAX_CHANGE]
+```buildoutcfg
+sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE.PNG
+[--output=OUTPUT_PATH][--mode=MODE][--target_class=TARGET_CLASS][--target_score=TARGET_SCORE]
+[--learning_rate=LEARNING_RATE][--max_change=MAX_CHANGE]
 ```
 
 ### Flags

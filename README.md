@@ -44,7 +44,8 @@ sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE
 This sets your file input path. By default it's the current directory.
 
 `--output=OUTPUT_PATH`\
-This sets your file destination output. By default it is the current directory.
+This sets your file destination output. By default it is the current directory with docker.
+If you use pip, you need to specify it.
 
 `--mode=MODE`\
 You can run the code in 2 modes: "predict" or "generate".

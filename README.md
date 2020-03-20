@@ -25,7 +25,7 @@ pip install there_is_no_spoon
 - put the image you want to change in your current directory.
 - run the following command and change MY_IMAGE.PNG with the name of your image:
 ```buildoutcfg
-there_is_no_spoon --input MY_IMAGE.PNG
+there_is_no_spoon --input MY_IMAGE.PNG --output adversarial_image.png
 ```
 - the output image will be saved in your current directory under the name "adversarial_image.png".
 

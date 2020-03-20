@@ -13,8 +13,7 @@ here https://docs.docker.com/install/
  sudo docker pull amagash/there_is_no_spoon:latest
  sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE.PNG
 ```
-- the output image will be saved in your current directory under the name "adversarial_image.png"
-Congratulations you've just generated an adversarial image !
+- the output image will be saved in your current directory under the name "adversarial_image.png".
 
 ### With pip:
 -  *pre-requisite*: I would recommend you to create a virtual environment first
@@ -28,6 +27,8 @@ pip install there_is_no_spoon
 ```buildoutcfg
 there_is_no_spoon --input MY_IMAGE.PNG
 ```
+- the output image will be saved in your current directory under the name "adversarial_image.png".
+
 ## Advanced features
 Several arguments can be passed to the docker to customize your adversarial image generation.
 

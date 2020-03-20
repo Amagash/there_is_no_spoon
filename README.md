@@ -7,7 +7,7 @@ There is no spoon is an application to generate adversarial images.
 ### With Docker:
 - *pre-requisite*: You need to have docker installed. You can find the documentation 
 here https://docs.docker.com/install/
-- put the image you want to change in your current directory.
+- put the image you want to change in your current directory in png format.
 - run the following command and change MY_IMAGE.PNG with the name of your image:
 ```
  sudo docker pull amagash/there_is_no_spoon:latest
@@ -22,7 +22,7 @@ virtualenv -p python3.7 spoon_env
 source spoon_env/bin/activate
 pip install there_is_no_spoon
 ```
-- put the image you want to change in your current directory.
+- put the image you want to change in your current directory in png format.
 - run the following command and change MY_IMAGE.PNG with the name of your image:
 ```buildoutcfg
 there_is_no_spoon --input MY_IMAGE.PNG --output adversarial_image.png
@@ -41,11 +41,11 @@ sudo docker run -v $(pwd):/data amagash/there_is_no_spoon --input /data/MY_IMAGE
 
 ### Flags
 `--input=INPUT_PATH`\
-This sets your file input path. By default it's the current directory.
+This sets your file input path. Make sure to use an image in png format.
 
 `--output=OUTPUT_PATH`\
 This sets your file destination output. By default it is the current directory with docker.
-If you use pip, you need to specify it.
+If you use pip, you need to specify it. Make sure to precise a png format for the image output.
 
 `--mode=MODE`\
 You can run the code in 2 modes: "predict" or "generate".

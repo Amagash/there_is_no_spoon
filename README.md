@@ -4,7 +4,7 @@
 There is no spoon is an application to generate adversarial images.
 
 ## Quick Start
-### With Docker:
+### With Docker [recommended]:
 - *pre-requisite*: You need to have docker installed. You can find the documentation 
 here https://docs.docker.com/install/
 - put the image you want to change in your current directory in png format.

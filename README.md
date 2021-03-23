@@ -21,7 +21,7 @@ Feel free to use sample_image.png in this project
 ```buildoutcfg
 virtualenv -p python3.7 spoon_env
 source spoon_env/bin/activate
-pip install there_is_no_spoon
+pip install there_is_no_spoon 'h5py<3.0.0'
 ```
 - put the image you want to change in your current directory in png format.
 Feel free to use sample_image.png in this project

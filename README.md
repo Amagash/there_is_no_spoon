@@ -51,7 +51,7 @@ If you use pip, you need to specify it. Make sure to precise a png format for th
 
 `--mode=MODE`\
 You can run the code in 2 modes: "predict" or "generate".
-- The "predict" mode simply takes an image as an input and prints the classification of this image.
+- The "predict" mode simply takes an image as an input and prints the classification of this image using InceptionV3 as a model.
 - The "generate" mode let's you generate an adversarial image from an input image of your choice.
 By default, mode="generate".
 
